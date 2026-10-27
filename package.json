@@ -8,7 +8,9 @@
     "ios": "expo start --ios",
     "web": "expo start --web",
     "setup": "node scripts/setup-project.mjs",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "assets:extract": "bash scripts/extract_xcassets.sh",
+    "assets:index": "node scripts/generate_index.js"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.9.1",

@@ -71,7 +71,52 @@ src/
 ├── theme/                # Design tokens
 ├── types/                # Shared TypeScript and form types
 └── utils/                # Generic validation and helpers
+└── scripts/                  # Setup and asset helper scripts
 ```
+
+## Asset Scripts
+
+Helper scripts in `scripts/` support porting an iOS app's assets. Run the extractor first, then the index generator.
+
+### Extract images from an Xcode asset catalog
+
+```bash
+npm run assets:extract -- <path/to/Assets.xcassets> <destination folder>
+```
+
+Example:
+
+```bash
+npm run assets:extract -- ../MyApp-iOS/MyApp/Assets.xcassets src/assets/images
+```
+
+It copies `.png`, `.jpg`, `.jpeg`, and `.svg` files out of the `.imageset` folders and keeps your group folders (for example `Auth/` and `Home/`).
+
+### Generate `index.ts` for an assets folder
+
+```bash
+npm run assets:index -- <folder>
+```
+
+Example:
+
+```bash
+npm run assets:index -- src/assets/images
+```
+
+This writes `index.ts` inside the folder with one `require()` per asset. The export is named after the folder, so `images` becomes `Images`:
+
+```ts
+import { Images } from "../assets/images";
+
+<Image source={Images.arrow_back} />
+```
+
+Notes:
+
+- `@2x` and `@3x` suffixes are removed from names, since React Native picks the density itself.
+- File names must be unique within the folder. The script warns on a collision and the later file wins.
+- Re-run the generator whenever assets are added or renamed. Do not edit `index.ts` by hand.
 
 ## Optional Modules
 
