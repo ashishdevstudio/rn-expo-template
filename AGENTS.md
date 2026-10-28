@@ -1,6 +1,6 @@
 # Project Rules
 
-- Use TypeScript, React Native, and Expo (SDK 54). Follow the existing architecture and `@/*` alias paths in `src/`.
+- Use TypeScript, React Native, and Expo (SDK 58). Follow the existing architecture and `@/*` alias paths in `src/`.
 - Inspect only the files needed for the task. Follow related imports and dependencies when necessary.
 - Do not scan the entire project, compare Git history, or run Python by default.
 - Use Python, shell scripts, and other tools only when they provide a clear benefit.

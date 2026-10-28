@@ -2,7 +2,7 @@
 
 ## Overview
 
-A reusable Expo SDK 54, React Native, and TypeScript starter with a scalable project structure and working placeholder session flow. It provides generic foundations that can be adapted for future applications without app-specific branding or optional integrations.
+A reusable Expo SDK 58, React Native, and TypeScript starter with a scalable project structure and working placeholder session flow. It provides generic foundations that can be adapted for future applications without app-specific branding or optional integrations.
 
 ## Included
 
