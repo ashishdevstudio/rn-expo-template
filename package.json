@@ -10,7 +10,8 @@
     "setup": "node scripts/setup-project.mjs",
     "typecheck": "tsc --noEmit",
     "assets:extract": "bash scripts/extract_xcassets.sh",
-    "assets:index": "node scripts/generate_index.js"
+    "assets:index": "node scripts/generate_index.js",
+    "assets:colors": "node scripts/generate_colors.js"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.9.1",

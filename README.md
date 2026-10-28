@@ -118,6 +118,20 @@ Notes:
 - File names must be unique within the folder. The script warns on a collision and the later file wins.
 - Re-run the generator whenever assets are added or renamed. Do not edit `index.ts` by hand.
 
+### Generate colors from an Xcode asset catalog
+
+```bash
+npm run assets:colors -- <path/to/Assets.xcassets> [output file]
+```
+
+Example:
+
+```bash
+npm run assets:colors -- ../MyApp-iOS/MyApp/Assets.xcassets src/theme/colors.ts
+```
+
+This reads every `.colorset` and writes light and dark hex values to a TypeScript file. Colors without a dark variant reuse the light value. Do not edit the generated file by hand.
+
 ## Optional Modules
 
 Firebase, notifications, analytics, maps, media, payments, and similar product-specific integrations are intentionally not included. Add them only when a project requires them.
